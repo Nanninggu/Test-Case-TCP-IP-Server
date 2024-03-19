@@ -6,7 +6,7 @@ import java.net.*;
 public class SimpleServer {
 
     public static void serverForTCPIP() throws IOException {
-        int portNumber = 5050; // Replace with your desired port number
+        int portNumber = 6300; // Replace with your desired port number
         // Create server socket
         ServerSocket serverSocket = new ServerSocket(portNumber);
 
@@ -30,7 +30,9 @@ public class SimpleServer {
 
             // Send response to client
             String response = "안녕 나는 서버야! 이건 서버에서 보내는 아웃풋 스트림이야.";
+            String responseToServer = "안녕 나는 서버야! 이건 서버에서 보내는 아웃풋 스트림이야.";
             outputStream.write(response.getBytes());
+            outputStream.flush();
 
             // Close streams and socket
             outputStream.close();
